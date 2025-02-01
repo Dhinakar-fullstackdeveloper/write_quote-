@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"> 
+<link rel="icon" href="icon1.jpg">
+    <style>
+        * {
+            font-family: "poppins", serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .h1tag {
+            display: block;
+            flex-wrap: wrap;
+        }
+
+        .inner {
+            display: inline;
+            color: coral;
+            font-size: 50px;
+            padding-left: 10px;
+
+
+        }
+
+        .side {
+            position: relative;
+            right: 15px;
+            display: inline;
+            color: white;
+            font-size: 40px;
+            padding-left: 10px;
+        }
+
+        #over {
+            position: absolute;
+            top: 0px;
+            background-color: black;
+            opacity: 0.9;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        #popup {
+
+            font-weight: 1000;
+            font-size: larger;
+            border-radius: 10px;
+            background-color: coral;
+            color: black;
+            height: 300px;
+            width: 500px;
+            z-index: 3;
+        }
+
+        #show {
+            z-index: 222;
+            transition: 0.2s;
+            font-size: 50px;
+            width: 80px;
+            color: white;
+            background-color: coral;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 50px;
+            border: none;
+            right: 50px;
+        }
+
+        h2 {
+            display: flex;
+            justify-self: center;
+
+            background-color: transparent;
+        }
+
+        #Title {
+
+            border: none;
+            border-bottom: black solid 3px;
+            position: relative;
+            left: 85px;
+            width: 60%;
+            height: 30px;
+            margin: 10PX;
+            background-color: transparent;
+            font-size: 20px;
+        }
+
+        #quote {
+
+            font-size: 20px;
+            border: none;
+            border-bottom: black solid 3px;
+            position: relative;
+            background-color: transparent;
+            width: 60%;
+            height: 30px;
+            left: 49px;
+            top: 20px;
+            margin: 10PX;
+        }
+
+        #qu {
+            position: relative;
+            background-color: transparent;
+            top: 20px;
+            left: 50px;
+            margin: 10PX;
+        }
+
+        #de {
+            position: relative;
+            left: 30px;
+        }
+
+        #ti {
+            position: relative;
+            left: 68px;
+        }
+
+        #des {
+            background-color: transparent;
+            position: relative;
+            width: 300px;
+            height: 50px;
+            left: 40px;
+        }
+
+        #addbtn,
+        #Closebtn {
+            font-size: 15px;
+            background-color: black;
+            color: coral;
+            padding: 8px;
+            width: 100px;
+            margin-left: 88px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        #deletebtn:hover {
+
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+#savebtn:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+        #show:hover {
+            cursor: pointer;
+            transition: 0.3s;
+            transform: translateY(-3px);
+        }
+
+        #addbtn:hover {
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+
+        #Closebtn:hover {
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+        .top {
+            word-wrap: break-word;
+            padding: 8px;
+            color: coral;
+            margin-left: 20px;
+            font-size: 28px;
+        }
+
+        .container {
+            border: white solid 1px;
+            display: flexbox; 
+            flex-wrap: wrap;
+            border-radius: 15px;
+            margin: 20px;
+            height: 300px;
+            width: 310px;
+            background-color: transparent;
+            color: white;
+        }
+
+
+        .container h4 {
+            word-wrap: break-word;
+            font-size: 15px;
+            padding: 5px;
+            margin-left: 20px;
+
+        }
+
+        #Title::placeholder {
+            color: black;
+            font-family: "poppins", serif;
+        }
+
+        #Title:focus {
+            outline: none;
+        }
+
+        #quote:focus {
+            outline: none;
+        }
+
+        #quote::placeholder {
+            color: black;
+            font-family: "poppins", serif;
+        }
+
+        #deletebtn {
+            transition: 0.2s;
+            position: relative;
+            top: 20px;
+            left: 40px;
+            background-color: coral;
+            font-family: "poppins", serif;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            justify-self: start;
+            border: none;
+
+            font-weight: 500;
+        }
+        #savebtn{
+            transition: 0.2s;
+            position: relative;
+            top: -5px;
+            right: 40px;
+            background-color: coral;
+            font-family: "poppins", serif;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            justify-self: end;
+            border: none;
+            font-weight: 500;
+}
+        .bigcont {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .h1tag h1 {
+            color: white;
+            font-size: 40px;
+            padding-left: 10px;
+        }
+     
+    </style>
+</head>
+
+<body style="background-image: url(bg.jpg); ">
+    <h1 class="h1tag">
+        <h1 class="inner">Q</h1>
+        <h1 class="side">uote Here</h1>
+    </h1>
+   
+    <button id="show">+</button>
+    <div class="bigcont">
+        <div class="container">
+            <h3 class="top">Success</h3>
+            <h4>To get something you never had,you have to do something you never did!</h4>
+            <button type="button" id="deletebtn" onclick="del(event)">Delete</button>
+            <button  id="savebtn" onclick="s()">Save</button>
+        </div>
+
+    </div>
+
+    <div id="over">
+        <div id="popup">
+            <h2>ADD QUOTE</h2>
+            <table>
+                <tr>
+                    <label id="ti">Title:</label>
+                    <input id="Title" type="text" placeholder="Add title">
+                </tr> <br>
+                <tr>
+                    <label id="qu">Quote:</label>
+                    <input id="quote" placeholder="Add quote" type="text">
+                </tr><br>
+               
+                <br><br>
+                <tr>
+                    <button id="addbtn">Add</button>
+                    <button id="Closebtn">Cancel</button>
+
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+
+
+    <script>
+        var bigcontainer = document.querySelector(".bigcont")
+        var overlay = document.getElementById("over")
+        var popupbox = document.getElementById("popup")
+        var btn = document.getElementById("show")
+        var add = document.getElementById("addbtn")
+        var close = document.getElementById("Closebtn")
+        var quotetitle = document.getElementById("Title")
+        var getquote = document.getElementById("quote")
+        var deletebutton = document.getElementById("deletebtn")
+        var savebutton = document.getElementById("savebtn")
+
+        btn.addEventListener("click", function () {
+            overlay.style.display = "flex"
+        })
+
+        close.addEventListener("click", function (event) {
+            overlay.style.display = "none"
+            event.preventDefault(event)
+        })
+
+        function del(event) {
+
+            event.target.parentElement.remove()
+        }
+        function s() {
+            var quotetitle = document.getElementById("Title")
+            var getquote = document.getElementById("quote")
+            var txt = getquote.value
+            var file = new Blob([txt])
+            var links = document.createElement("a")
+            links.href = URL.createObjectURL(file)
+            links.download = quotetitle.value + "_Quote"
+            document.body.appendChild(links)
+            links.click();
+        }
+        add.addEventListener("click", function (event) {
+            var displaytext = document.createElement("div")
+            displaytext.setAttribute("class", "container")
+            displaytext.innerHTML = `<h3 class="top">${quotetitle.value}</h3>
+        <h4>${getquote.value}</h4>
+        <button id="deletebtn" onclick="del(event)">Delete</button>
+        <button id="savebtn" onclick="s()">Save</button>
+        </div>`
+            bigcontainer.append(displaytext)
+            overlay.style.display = "none"
+            event.preventDefault(event)
+        })
+
+    </script>
+</body>
+
+</html>
